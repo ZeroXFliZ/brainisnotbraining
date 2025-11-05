@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Training Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Brain Training Game</h1>
+        
+        <div id="modeSelection" class="mode-selection">
+            <h2>Select Game Mode</h2>
+            <div class="mode-buttons">
+                <button class="mode-btn" onclick="startGame(5)">5x5 Mode<br><span>(25 numbers)</span></button>
+                <button class="mode-btn" onclick="startGame(7)">7x7 Mode<br><span>(49 numbers)</span></button>
+            </div>
+        </div>
+
+        <div id="gameScreen" class="game-screen hidden">
+            <div class="game-header">
+                <div class="info">
+                    <span>Mode: <strong id="currentMode"></strong></span>
+                    <span>Next: <strong id="nextNumber">1</strong></span>
+                    <span>Time: <strong id="timer">0.00s</strong></span>
+                </div>
+                <button class="restart-btn" onclick="restartGame()">Restart</button>
+            </div>
+            <div id="gameBoard" class="game-board"></div>
+        </div>
+
+        <div id="completionScreen" class="completion-screen hidden">
+            <div class="completion-content">
+                <h2>🎉 Game Complete!</h2>
+                <p class="completion-time">Time: <strong id="finalTime"></strong></p>
+                <p class="completion-mode">Mode: <strong id="completedMode"></strong></p>
+                <div class="completion-buttons">
+                    <button class="restart-btn" onclick="restartGame()">Play Again</button>
+                    <button class="mode-btn" onclick="backToMenu()">Change Mode</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
